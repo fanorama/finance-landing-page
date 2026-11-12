@@ -1,3 +1,5 @@
+import Label from './Label'
+
 const links = [
   { href: '#features', label: 'Features' },
   { href: '#pricing', label: 'Pricing' },
@@ -7,17 +9,22 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-line bg-surface">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 sm:px-6 md:flex-row md:items-center md:justify-between">
+    <footer className="border-t border-white/10 bg-onyx">
+      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-14 sm:px-6 md:flex-row md:items-center md:justify-between">
         <div>
-          <p className="text-lg font-extrabold text-brand-700">Pocketly</p>
-          <p className="mt-1 text-sm text-muted">Personal finance, made simple.</p>
+          <p className="text-2xl font-extrabold tracking-tight text-white">Pocketly</p>
+          <p className="mt-2 text-sm leading-relaxed text-white/60">
+            Personal finance, made simple.
+          </p>
         </div>
         <nav aria-label="Footer">
-          <ul className="flex flex-wrap gap-x-6 gap-y-2">
+          <ul className="flex flex-wrap gap-x-8 gap-y-3">
             {links.map((link) => (
               <li key={link.href}>
-                <a href={link.href} className="text-sm text-muted hover:text-ink">
+                <a
+                  href={link.href}
+                  className="rounded-full text-sm text-white/60 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-onyx"
+                >
                   {link.label}
                 </a>
               </li>
@@ -25,8 +32,8 @@ export default function Footer() {
           </ul>
         </nav>
       </div>
-      <div className="border-t border-line py-4 text-center text-xs text-muted">
-        © {new Date().getFullYear()} Pocketly. All rights reserved.
+      <div className="border-t border-white/10 py-5 text-center text-white/40">
+        <Label>© {new Date().getFullYear()} Pocketly. All rights reserved.</Label>
       </div>
     </footer>
   )

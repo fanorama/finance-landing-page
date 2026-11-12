@@ -4,6 +4,7 @@ import Hero from './sections/Hero'
 import Features from './sections/Features'
 import HowItWorks from './sections/HowItWorks'
 import Testimonials from './sections/Testimonials'
+import LogoTicker from './sections/LogoTicker'
 import Pricing from './sections/Pricing'
 import Faq from './sections/Faq'
 import DownloadCta from './sections/DownloadCta'
@@ -17,6 +18,7 @@ export default function App() {
         <Features />
         <HowItWorks />
         <Testimonials />
+        <LogoTicker />
         <Pricing />
         <Faq />
         <DownloadCta />

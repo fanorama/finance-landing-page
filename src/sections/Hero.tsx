@@ -26,7 +26,7 @@ export default function Hero() {
         <div className="grid items-center gap-16 lg:grid-cols-[1.25fr_1fr] lg:gap-8">
           <div>
             <Label className="opacity-70">Personal finance app</Label>
-            <h1 className="mt-5 text-5xl font-bold tracking-tight sm:text-6xl md:text-8xl lg:text-6xl">
+            <h1 className="mt-5 text-5xl font-bold tracking-tight sm:text-6xl">
               See where
               <br />
               your money

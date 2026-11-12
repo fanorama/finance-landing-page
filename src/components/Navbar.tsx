@@ -31,7 +31,7 @@ export default function Navbar() {
         aria-label="Main"
         className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6"
       >
-        <a href="#" className="text-xl font-extrabold tracking-tight text-brand-700">
+        <a href="#top" className="text-xl font-extrabold tracking-tight text-brand-700">
           Pocketly
         </a>
 
@@ -71,21 +71,23 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {open && (
-        <ul id="mobile-menu" className="border-t border-line bg-white px-4 py-2 md:hidden">
-          {links.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                onClick={close}
-                className="block rounded-control px-3 py-3 text-base font-medium text-ink hover:bg-surface"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      )}
+      <ul
+        id="mobile-menu"
+        hidden={!open}
+        className="border-t border-line bg-white px-4 py-2 md:hidden"
+      >
+        {links.map((link) => (
+          <li key={link.href}>
+            <a
+              href={link.href}
+              onClick={close}
+              className="block rounded-control px-3 py-3 text-base font-medium text-ink hover:bg-surface"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
     </header>
   )
 }

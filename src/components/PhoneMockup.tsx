@@ -1,11 +1,15 @@
+import Badge from './Badge'
+import GlassCard from './GlassCard'
+import Label from './Label'
+
 const spending = [
-  { day: 'Mon', value: 42 },
-  { day: 'Tue', value: 68 },
-  { day: 'Wed', value: 35 },
-  { day: 'Thu', value: 90 },
-  { day: 'Fri', value: 55 },
-  { day: 'Sat', value: 76 },
-  { day: 'Sun', value: 48 },
+  { day: 'M', value: 42 },
+  { day: 'T', value: 68 },
+  { day: 'W', value: 35 },
+  { day: 'T', value: 90 },
+  { day: 'F', value: 55 },
+  { day: 'S', value: 76 },
+  { day: 'S', value: 48 },
 ]
 
 const transactions = [
@@ -18,62 +22,62 @@ export default function PhoneMockup() {
   return (
     <div
       role="img"
-      aria-label="Pocketly app screen showing a balance of $4,826.40, a weekly spending chart, and three recent transactions"
-      className="relative mx-auto w-65 rounded-[2.5rem] border-8 border-ink bg-ink shadow-xl sm:w-72"
+      aria-label="Pocketly app card showing a balance of $4,826.40, a weekly spending chart, and three recent transactions"
+      className="relative mx-auto w-full max-w-sm lg:ml-auto lg:mr-0"
     >
-      <div aria-hidden="true" className="overflow-hidden rounded-4xl bg-surface">
-        <div className="mx-auto mt-2 h-1.5 w-16 rounded-full bg-ink/80" />
+      <div
+        aria-hidden="true"
+        className="absolute -inset-5 -rotate-3 rounded-tl-[100px] rounded-tr-[40px] rounded-br-[100px] rounded-bl-[40px] bg-black"
+      />
 
-        <div className="space-y-4 p-4 pt-3">
-          <div className="rounded-card bg-brand-600 p-4 text-white">
-            <p className="text-xs text-brand-100">Total balance</p>
-            <p className="mt-1 text-2xl font-extrabold">$4,826.40</p>
-            <p className="mt-2 text-xs text-brand-100">+$310.00 saved this month</p>
-          </div>
-
-          <div className="rounded-card border border-line bg-white p-3">
-            <div className="flex items-baseline justify-between">
-              <p className="text-xs font-semibold">Spending this week</p>
-              <p className="text-xs text-muted">$418</p>
-            </div>
-            <div className="mt-3 flex h-20 items-end gap-1.5">
-              {spending.map((d) => (
-                <div key={d.day} className="flex h-full flex-1 flex-col items-center gap-1">
-                  <div className="flex w-full flex-1 items-end">
-                    <div
-                      className="w-full rounded-sm bg-brand-500"
-                      style={{ height: `${d.value}%` }}
-                    />
-                  </div>
-                  <span className="text-[9px] text-muted">{d.day[0]}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
+      <GlassCard float aria-hidden="true" className="relative space-y-5 p-6 text-white">
+        <div className="flex items-start justify-between gap-4">
           <div>
-            <p className="mb-2 text-xs font-semibold">Recent transactions</p>
-            <ul className="space-y-2">
-              {transactions.map((t) => (
-                <li
-                  key={t.name}
-                  className="flex items-center justify-between rounded-control bg-white px-3 py-2"
-                >
-                  <div>
-                    <p className="text-xs font-semibold">{t.name}</p>
-                    <p className="text-[10px] text-muted">{t.category}</p>
-                  </div>
-                  <p
-                    className={`text-xs font-semibold ${t.income ? 'text-brand-600' : 'text-ink'}`}
-                  >
-                    {t.amount}
-                  </p>
-                </li>
-              ))}
-            </ul>
+            <Label className="text-white/60">Total balance</Label>
+            <p className="mt-1 text-4xl font-bold tracking-tight">$4,826.40</p>
+          </div>
+          <Badge variant="yellow" className="shrink-0 whitespace-nowrap">
+            Add money
+          </Badge>
+        </div>
+
+        <div>
+          <div className="flex items-baseline justify-between">
+            <Label className="text-white/60">Spending this week</Label>
+            <span className="text-sm font-medium">$418</span>
+          </div>
+          <div className="mt-3 flex h-24 items-end gap-2">
+            {spending.map((d, i) => (
+              <div key={i} className="flex h-full flex-1 flex-col items-center gap-1.5">
+                <div className="flex w-full flex-1 items-end">
+                  <div
+                    className="w-full rounded-full bg-cyber-yellow"
+                    style={{ height: `${d.value}%` }}
+                  />
+                </div>
+                <span className="text-[10px] text-white/60">{d.day}</span>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
+
+        <ul className="space-y-2">
+          {transactions.map((t) => (
+            <li
+              key={t.name}
+              className="flex items-center justify-between rounded-full bg-white/10 px-5 py-3"
+            >
+              <div>
+                <p className="text-sm font-medium leading-tight">{t.name}</p>
+                <p className="text-[10px] uppercase tracking-widest text-white/60">{t.category}</p>
+              </div>
+              <p className={`text-sm font-bold ${t.income ? 'text-cyber-yellow' : 'text-white'}`}>
+                {t.amount}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </GlassCard>
     </div>
   )
 }

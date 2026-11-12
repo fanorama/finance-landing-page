@@ -1,3 +1,6 @@
+import Label from '../components/Label'
+import Reveal from '../components/Reveal'
+
 const faqs = [
   {
     question: 'Is my financial data secure?',
@@ -31,22 +34,28 @@ const faqs = [
 
 export default function Faq() {
   return (
-    <section id="faq" className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
-      <h2 className="text-center text-3xl font-bold tracking-tight sm:text-4xl">
-        Frequently asked questions
-      </h2>
+    <section id="faq" className="mx-auto max-w-3xl px-4 py-24 sm:px-6">
+      <Reveal>
+        <Label className="text-white/60">FAQ</Label>
+        <h2 className="mt-4 text-4xl font-bold tracking-tight text-white md:text-6xl">
+          Frequently asked questions
+        </h2>
+      </Reveal>
 
-      <div className="mt-10 divide-y divide-line border-y border-line">
+      <div className="mt-12 space-y-3">
         {faqs.map((faq) => (
-          <details key={faq.question} className="group py-4">
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-sm py-1 text-lg font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 [&::-webkit-details-marker]:hidden">
-              {faq.question}
-              <svg viewBox="0 0 24 24" className="size-5 shrink-0 text-muted transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M6 9l6 6 6-6" />
-              </svg>
-            </summary>
-            <p className="mt-3 text-muted">{faq.answer}</p>
-          </details>
+          <Reveal key={faq.question}>
+            <details className="group overflow-hidden rounded-[32px] bg-charcoal">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-[32px] px-6 py-5 text-base font-bold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-white [&::-webkit-details-marker]:hidden">
+                {faq.question}
+                <svg viewBox="0 0 24 24" className="size-6 shrink-0 text-cyber-yellow" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="M12 5v14" className="group-open:hidden" />
+                </svg>
+              </summary>
+              <p className="px-6 pb-6 text-sm leading-relaxed text-white/70">{faq.answer}</p>
+            </details>
+          </Reveal>
         ))}
       </div>
     </section>

@@ -32,7 +32,7 @@ export default function Footer() {
           </ul>
         </nav>
       </div>
-      <div className="border-t border-white/10 py-5 text-center text-white/40">
+      <div className="border-t border-white/10 py-5 text-center text-white/60">
         <Label>© {new Date().getFullYear()} Pocketly. All rights reserved.</Label>
       </div>
     </footer>

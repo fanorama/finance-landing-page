@@ -56,7 +56,7 @@ export default function Navbar() {
         </ul>
 
         <div className="flex items-center gap-2">
-          <PillButton href="#download" className="px-5 py-2.5">
+          <PillButton href="#download" size="sm" surface="yellow">
             Download
           </PillButton>
           <button

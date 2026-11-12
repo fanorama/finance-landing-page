@@ -38,8 +38,10 @@ export default function Hero() {
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <PillButton href="#download">Download the app</PillButton>
-              <PillButton href="#how-it-works" variant="outline">
+              <PillButton href="#download" surface="yellow">
+                Download the app
+              </PillButton>
+              <PillButton href="#how-it-works" variant="outline" surface="yellow">
                 See how it works
               </PillButton>
             </div>

@@ -5,7 +5,7 @@ const storeButton =
 
 export default function Hero() {
   return (
-    <section className="overflow-hidden bg-linear-to-b from-brand-50 to-white">
+    <section id="top" className="overflow-hidden bg-linear-to-b from-brand-50 to-white">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:gap-8 lg:py-24">
         <div className="text-center lg:text-left">
           <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">

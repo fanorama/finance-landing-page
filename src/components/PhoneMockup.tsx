@@ -27,7 +27,7 @@ export default function PhoneMockup() {
     >
       <div
         aria-hidden="true"
-        className="absolute -inset-5 -rotate-3 rounded-tl-[100px] rounded-tr-[40px] rounded-br-[100px] rounded-bl-[40px] bg-black"
+        className="absolute -inset-6 -rotate-3 rounded-tl-[64px] rounded-tr-[40px] rounded-br-[64px] rounded-bl-[40px] bg-black"
       />
 
       <GlassCard float aria-hidden="true" className="relative space-y-5 p-6 text-white">

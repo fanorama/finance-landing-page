@@ -20,39 +20,41 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative mb-10 overflow-x-clip rounded-br-[120px] rounded-bl-[40px] bg-cyber-yellow text-black lg:mb-44"
+      className="relative mb-10 overflow-x-clip rounded-br-[120px] rounded-bl-[40px] bg-cyber-yellow text-black lg:mb-28"
     >
-      <div className="mx-auto max-w-6xl px-4 pt-12 pb-12 sm:px-6 lg:pt-14 lg:pb-10">
+      <div className="relative mx-auto max-w-6xl px-4 pt-12 pb-12 sm:px-6 lg:pt-10 lg:pb-12">
         <div className="grid items-center gap-16 lg:grid-cols-[1.25fr_1fr] lg:gap-8">
           <div>
             <Label className="opacity-70">Personal finance app</Label>
-            <h1 className="mt-5 text-5xl font-bold tracking-tight sm:text-6xl md:text-8xl">
+            <h1 className="mt-5 text-5xl font-bold tracking-tight sm:text-6xl">
               See where
               <br />
               your money
               <br />
               goes.
             </h1>
-            <p className="mt-6 max-w-md text-xl font-medium opacity-80">
+            <p className="mt-6 max-w-md text-xl lg:mt-4 font-medium opacity-80">
               Pocketly tracks your spending, sets budgets, and grows your savings, all in one app.
             </p>
 
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <PillButton href="#download">Download the app</PillButton>
-              <PillButton href="#how-it-works" variant="outline">
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row lg:mt-6">
+              <PillButton href="#download" surface="yellow">
+                Download the app
+              </PillButton>
+              <PillButton href="#how-it-works" variant="outline" surface="yellow">
                 See how it works
               </PillButton>
             </div>
           </div>
 
-          <div className="lg:translate-y-36">
+          <div className="lg:-my-14 lg:translate-y-24">
             <PhoneMockup />
           </div>
         </div>
 
-        <div className="relative mt-12 flex translate-y-1/2 flex-wrap gap-3">
+        <div className="mt-12 flex translate-y-1/2 flex-wrap gap-3 lg:absolute lg:bottom-0 lg:left-6 lg:mt-0">
           <span className="rounded-full bg-black">
-            <Badge icon={starIcon}>4.9 rating on app stores</Badge>
+            <Badge icon={starIcon}>4.8 rating on app stores</Badge>
           </span>
           <span className="rounded-full bg-black">
             <Badge icon={lockIcon}>Bank-level encryption</Badge>
